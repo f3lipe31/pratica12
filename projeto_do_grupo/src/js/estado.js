@@ -6,7 +6,6 @@ const livros = []
  * @param {string} genero
  * @param {number} ano
  */
-
 export function adicionarLivro(titulo, autor, genero, ano) {
  livros.push({
  titulo: titulo.trim(),
@@ -16,7 +15,6 @@ export function adicionarLivro(titulo, autor, genero, ano) {
  lido: false,
  })
 }
-
 /**
  * Retorna todos os livros cadastrados.
  * @returns {Array}
@@ -33,14 +31,12 @@ export function marcarLido(index) {
  livros[index].lido = !livros[index].lido
  }
 }
-
 /**
  * Retorna livros filtrados por gênero.
  * "Todos" retorna o array completo.
  * @param {string} genero
  * @returns {Array}
  */
-
 export function filtrarPorGenero(genero) {
  if (genero === 'Todos') return livros
  return livros.filter(livro => livro.genero === genero)

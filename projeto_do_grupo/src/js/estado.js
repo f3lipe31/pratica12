@@ -1,4 +1,17 @@
-const livros = []
+// estado.js — gerenciamento de estado com sessionStorage
+// issue #11 — Gabriel
+
+const CHAVE = 'estante_livros'
+
+function carregarLivros() {
+  const dados = sessionStorage.getItem(CHAVE)
+  return dados ? JSON.parse(dados) : []
+}
+
+function salvarLivros(livros) {
+  sessionStorage.setItem(CHAVE, JSON.stringify(livros))
+}
+
 /**
  * Adiciona um novo livro ao array.
  * @param {string} titulo
@@ -7,30 +20,37 @@ const livros = []
  * @param {number} ano
  */
 export function adicionarLivro(titulo, autor, genero, ano) {
- livros.push({
- titulo: titulo.trim(),
- autor: autor.trim(),
- genero,
- ano: Number(ano),
- lido: false,
- })
+  const livros = carregarLivros()
+  livros.push({
+    titulo: titulo.trim(),
+    autor:  autor.trim(),
+    genero,
+    ano:    Number(ano),
+    lido:   false,
+  })
+  salvarLivros(livros)
 }
+
 /**
  * Retorna todos os livros cadastrados.
  * @returns {Array}
  */
 export function obterLivros() {
- return livros
+  return carregarLivros()
 }
+
 /**
- * Alterna o status lido/não lido pelo índice.
+ * Alterna o status lido/não lido pelo índice e salva.
  * @param {number} index
  */
 export function marcarLido(index) {
- if (livros[index] !== undefined) {
- livros[index].lido = !livros[index].lido
- }
+  const livros = carregarLivros()
+  if (livros[index] !== undefined) {
+    livros[index].lido = !livros[index].lido
+    salvarLivros(livros)
+  }
 }
+
 /**
  * Retorna livros filtrados por gênero.
  * "Todos" retorna o array completo.
@@ -38,6 +58,7 @@ export function marcarLido(index) {
  * @returns {Array}
  */
 export function filtrarPorGenero(genero) {
- if (genero === 'Todos') return livros
- return livros.filter(livro => livro.genero === genero)
+  const livros = carregarLivros()
+  if (genero === 'Todos') return livros
+  return livros.filter(livro => livro.genero === genero)
 }

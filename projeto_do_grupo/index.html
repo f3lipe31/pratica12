@@ -1,13 +1,67 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>projeto_do_grupo</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estante Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo">Estante Digital</a>
+    <ul class="nav-links">
+      <li><a href="/index.html" class="nav-link ativo">Início</a></li>
+      <li><a href="/src/pages/cadastro.html" class="nav-link">Cadastro</a></li>
+      <li><a href="/src/pages/listagem.html" class="nav-link">Listagem</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">&#9776;</button>
+  </nav>
+
+  <main class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Sua biblioteca pessoal</p>
+      <h1 class="hero-title">Organize seus<br /><em>livros favoritos</em></h1>
+      <p class="hero-desc">Cadastre, acompanhe e filtre sua coleção de livros. Marque o que já leu e descubra o que ainda está por vir.</p>
+      <div class="hero-actions">
+        <a href="/src/pages/cadastro.html" class="btn btn-primary">Adicionar livro</a>
+        <a href="/src/pages/listagem.html" class="btn btn-secondary">Ver coleção</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="book-stack">
+        <div class="book book-1"><span>Romance</span></div>
+        <div class="book book-2"><span>Ficção</span></div>
+        <div class="book book-3"><span>Técnico</span></div>
+      </div>
+    </div>
+  </main>
+
+  <section class="features">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#43;</div>
+          <h3>Cadastre</h3>
+          <p>Adicione título, autor, gênero e ano de cada livro da sua coleção.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9776;</div>
+          <h3>Filtre</h3>
+          <p>Encontre livros por gênero rapidamente na sua listagem.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#10003;</div>
+          <h3>Acompanhe</h3>
+          <p>Marque livros como lidos ou não lidos e acompanhe seu progresso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/src/js/nav.js"></script>
+</body>
 </html>

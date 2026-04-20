@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Estante — Estante Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo">Estante Digital</a>
+    <ul class="nav-links">
+      <li><a href="/index.html" class="nav-link">Início</a></li>
+      <li><a href="/src/pages/cadastro.html" class="nav-link">Cadastro</a></li>
+      <li><a href="/src/pages/listagem.html" class="nav-link ativo">Listagem</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">&#9776;</button>
+  </nav>
+
+  <header class="page-header">
+    <h1>Minha estante</h1>
+    <p>Todos os livros que você adicionou aparecem aqui.</p>
+  </header>
+
+  <div class="listagem-container">
+    <div class="listagem-toolbar">
+      <h2>Coleção</h2>
+      <div class="filtro-grupo" id="filtroGenero">
+        <button class="filtro-btn ativo" data-genero="Todos">Todos</button>
+        <button class="filtro-btn" data-genero="Ficção">Ficção</button>
+        <button class="filtro-btn" data-genero="Romance">Romance</button>
+        <button class="filtro-btn" data-genero="Técnico">Técnico</button>
+        <button class="filtro-btn" data-genero="Outro">Outro</button>
+      </div>
+    </div>
+
+    <div class="livros-grid" id="listaLivros">
+      <!-- cards gerados via JS -->
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/listagem.js"></script>
+</body>
+</html>

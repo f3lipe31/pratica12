@@ -70,4 +70,4 @@ estante-digital/
 
 ## Kanban
 
-Acompanhe o progresso pelo [GitHub Projects](https://github.com/seu-usuario/estante-digital/projects).
+Acompanhe o progresso pelo [GitHub Projects](https://github.com/users/f3lipe31/projects/2).

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Livro — Estante Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo">Estante Digital</a>
+    <ul class="nav-links">
+      <li><a href="/index.html" class="nav-link">Início</a></li>
+      <li><a href="/src/pages/cadastro.html" class="nav-link ativo">Cadastro</a></li>
+      <li><a href="/src/pages/listagem.html" class="nav-link">Listagem</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">&#9776;</button>
+  </nav>
+
+  <header class="page-header">
+    <h1>Cadastrar livro</h1>
+    <p>Preencha os campos abaixo para adicionar um livro à sua estante.</p>
+  </header>
+
+  <div class="form-container">
+    <div class="form-card">
+
+      <div class="form-success" id="msgSucesso">
+        Livro adicionado com sucesso!
+      </div>
+
+      <form id="formCadastro" novalidate>
+
+        <div class="form-group">
+          <label for="titulo">Título do livro *</label>
+          <input type="text" id="titulo" name="titulo" placeholder="Ex: O Senhor dos Anéis" />
+          <span class="mensagem-erro" id="erroTitulo"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="autor">Autor *</label>
+          <input type="text" id="autor" name="autor" placeholder="Ex: J.R.R. Tolkien" />
+          <span class="mensagem-erro" id="erroAutor"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="genero">Gênero *</label>
+          <select id="genero" name="genero">
+            <option value="">Selecione um gênero</option>
+            <option value="Ficção">Ficção</option>
+            <option value="Romance">Romance</option>
+            <option value="Técnico">Técnico</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <span class="mensagem-erro" id="erroGenero"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="ano">Ano de publicação *</label>
+          <input type="number" id="ano" name="ano" placeholder="Ex: 1954" min="1000" max="2025" />
+          <span class="mensagem-erro" id="erroAno"></span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Adicionar livro</button>
+          <button type="button" class="btn btn-secondary" id="btnLimpar">Limpar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/cadastro.js"></script>
+</body>
+</html>
